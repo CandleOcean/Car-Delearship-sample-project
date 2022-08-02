@@ -1,11 +1,13 @@
 package car_dealership;
 
 public class Customer {
-	 String name;
-	 String address;
-	 double cashOnHand;
+	 private String name;
+	 private String address;
+	 private double cashOnHand;
 	
-	
+	//Add a constructor 
+
+	//Getter and Setters down ok
 	public String getName() {
 		return name;
 	}
@@ -25,9 +27,16 @@ public class Customer {
 		this.cashOnHand = cashOnHand;
 	}
 
+    // But this still violates the principle of Single Responsibility which 'S' in SOLID principles
+	public Vehicle purchaseCar(Vehicle vehicle, Employee emp, boolean isFinanced) {
+		Vehicle vehicleToPurchase = new Vehicle();
+		if (isFinanced) {
+			//what do you do?
+		} else {
+			//what do you do?
+		}
 
-	public void purchaseCar(Vehicle vehicle, Employee emp, boolean finance) {
-		
+		return vehicle;
 		
 	}
 }
