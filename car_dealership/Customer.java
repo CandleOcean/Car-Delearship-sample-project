@@ -1,30 +1,23 @@
 package car_dealership;
 
-public class Customer {
-	 private String name;
-	 private String address;
-	 private double cashOnHand;
-	
-	//Add a constructor 
+public class Customer extends Person{
 
-	//Getter and Setters down ok
-	public String getName() {
-		return name;
+	private double cashAtHand;
+
+	public Customer() {
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public Customer(String name, String address, double cashOnHand ) {
+		super(name, address);
+		this.cashAtHand = cashOnHand;
 	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
+
+
 	public double getCashOnHand() {
-		return cashOnHand;
+		return cashAtHand;
 	}
-	public void setCashOnHand(double cashOnHand) {
-		this.cashOnHand = cashOnHand;
+	public void setCashOnHand(double cashAtHand) {
+		this.cashAtHand = cashAtHand;
 	}
 
     // But this still violates the principle of Single Responsibility which 'S' in SOLID principles
@@ -35,7 +28,6 @@ public class Customer {
 		} else {
 			//what do you do?
 		}
-
 		return vehicle;
 		
 	}
