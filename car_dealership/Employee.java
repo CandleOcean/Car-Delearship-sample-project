@@ -1,13 +1,12 @@
 package car_dealership;
 
-public class Employee extends Customer{
-	String name;
+public class Employee extends Person{
 	
-	public void handleCustomer(Customer cust, boolean finance, Vehicle vehicle) {
-		if(finance == true) {
-			runCreditHistory(cust1.getName(), cust1.getCashOnHand());
-		}else if(vehicle.getPrice() <= cust1.getCashOnHand()) {
-			processTransaction(cust1.getName(), vehicle.getName());
+	public void handleCustomer(Customer cust, boolean isFinancedPayment, Vehicle vehicle) {
+		if(isFinancedPayment) {
+			runCreditHistory(cust, cust.getCashOnHand());
+		} else if(vehicle.getPrice() <= cust.getCashOnHand()) {
+			processTransaction(cust, vehicle);
 			
 		}else {
 			System.out.println("Add on your money to get yourself a car of your choice");
@@ -15,11 +14,12 @@ public class Employee extends Customer{
 	}
 	
 	public void runCreditHistory(Customer cust, double loanAmount) {
-		System.out.println(cust1.getName()+" just bought himself a " + vehicle1.getName);
+		System.out.println("Running the customers credit history");
 	}
 	
 	public void processTransaction(Customer cust1, Vehicle vehicle) {
-		
+		System.out.println(cust1.getName()+" just bought himself a " + vehicle.getName());
+
 	}
 
 }
